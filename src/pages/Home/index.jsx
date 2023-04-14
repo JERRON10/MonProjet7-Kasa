@@ -1,49 +1,36 @@
 import styled from 'styled-components'
 import color from '../../utils/colors'
-import logements from '../../data/logements.json'
-import {Link} from 'react-router-dom'
+import Banner from '../../components/Banner/index'
+import Card from '../../components/Card/index'
 
-const StyledBanner = styled.div`
-  border: 0 black solid;
-  border-radius: 10px;
-  padding: 60px;
-  margin: 0 40px;
-  text-align: center;
-  color: black;
-  background-color: lightblue;
-  font-size: 40px;
-`
+
 const StyleBoxCards = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   background-color: ${color.backgroundWindow};
   border-radius: 20px;
-  margin: 30px 40px;
+  margin: 30px 100px;
 `
-const StyleCard = styled(Link)`
-  background: linear-gradient(180deg, ${color.primary} 0%, black 220%);
-  border-radius: 10px;
-  width: 350px;
-  height: 350px;
-  margin: 55px;
-  text-align: center;
-  text-decoration: none;
-  color : ${color.secondary}
+
+const StyleTitle = styled.h1`
+color: white;
+font-size: 50px;
+position: relative;
+z-index:2;
+font-weight: 4;
+
 `
 
 function Home() {
 
-
-
   return (
     <div>
-      <StyledBanner>Chez vous, partout et ailleurs</StyledBanner>
+      <Banner>
+        <StyleTitle> Chez vous, partout et ailleurs</StyleTitle>
+      </Banner>
       <StyleBoxCards>
-        {logements.map((data) => (
-          <StyleCard to={data.id} key={data.id}>{data.id} Titre de la location</StyleCard>
-        ))}
-        
+        <Card/>
       </StyleBoxCards>
     </div>
   )

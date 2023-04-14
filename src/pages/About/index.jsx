@@ -1,5 +1,9 @@
+import Banner from '../../components/Banner/index'
+
 function About() {
-  return <h1>A Propos 🔥</h1>
+  return (
+    <Banner />
+  )
 }
 
 export default About

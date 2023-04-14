@@ -8,12 +8,17 @@ const HeaderLink = styled.header`
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  margin: 25px 50px;
+  margin: 30px 100px;
 `
 const StyledLink = styled(Link)`
   margin-left: 40px;
   font-size: 24px;
   text-decoration: none;
+  &:hover {
+    text-decoration: underline solid 1px;
+    text-underline-offset: 2px;
+    text-decoration-skip-ink: none;
+  }
 `
 
 export default function Header() {
