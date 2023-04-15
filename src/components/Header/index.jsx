@@ -8,11 +8,13 @@ const HeaderLink = styled.header`
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  margin: 30px 100px;
+  margin: 40px auto;
+  width: 90%;
 `
 const StyledLink = styled(Link)`
   margin-left: 40px;
-  font-size: 24px;
+  font-size: 20px;
+  font-weight: 500;
   text-decoration: none;
   &:hover {
     text-decoration: underline solid 1px;

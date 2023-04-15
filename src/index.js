@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
 * {
   font-family: montserrat, Helvetica, sans-serif;;
   color : ${colors.primary};
+  font-weight:4;
   margin: 0;
 }
 `
@@ -28,7 +29,7 @@ root.render(
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/:id" element={<Renting />} />
-      <Route path="*" element={<Error />} />
+      <Route path="/*" element={<Error />} />
     </Routes>
     <Footer />
   </BrowserRouter>
