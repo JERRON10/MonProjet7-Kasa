@@ -19,7 +19,7 @@ function Card (){
     return (    
         <Fragment>
         {logements.map((data) => (
-            <StyleCard to={data.id} key={data.id}>Titre de la location</StyleCard>
+            <StyleCard to={`/renting/${data.id}`} key={data.id}>Titre de la location</StyleCard>
           ))}
         </Fragment> 
     )
