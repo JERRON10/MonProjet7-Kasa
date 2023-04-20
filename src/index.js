@@ -29,7 +29,7 @@ root.render(
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/renting/:id" element={<Renting />} />
-      <Route path="*" element={<Error />} />
+      <Route path="/*" element={<Error />} />
     </Routes>
     <Footer />
   </BrowserRouter>

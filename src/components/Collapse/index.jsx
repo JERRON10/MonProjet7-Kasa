@@ -34,9 +34,10 @@ const StyleCollapseContent = styled.div`
   top: -10px;
   z_index: 0;
 `
-const StyleCollapseP = styled.p`
+const StyleCollapseP = styled.ul`
   padding: 30px;
   font-size: 24px;
+  text-align: left;
 `
 const StyleCollapseH3 = styled.h3`
   color: white;
@@ -66,6 +67,7 @@ function Collapse({ title, content }) {
       <StyleCollapseContent>
         <br />
         <StyleCollapseP>{content}</StyleCollapseP>
+        <br/>
       </StyleCollapseContent>
     </StyleCollapse>
   ) : (

@@ -54,7 +54,6 @@ const StyleCounter = styled.p`
 function Caroussel({ params }) {
   const findImg = data.find((element) => element.id === params)
   const totalPicture = findImg.pictures.length
-  console.log(totalPicture)
   const [index, setIndex] = useState(0)
   const previousImg = () => {
     const firstImg = index === 0
@@ -68,14 +67,12 @@ function Caroussel({ params }) {
   }
   return totalPicture === 1 ? (
     <div>
-      <h1> ID : {params}</h1>
       <StyleCaroussel>
         <StyledImg src={findImg.pictures[index]} />
       </StyleCaroussel>
     </div>
   ) : (
     <div>
-      <h1> ID : {params}</h1>
       <StyleCaroussel>
         <StyledImg src={findImg.pictures[index]} />
         <StyleArrowLeft
