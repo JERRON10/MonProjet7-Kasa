@@ -14,11 +14,13 @@ const GlobalStyle = createGlobalStyle`
 * {
   font-family: montserrat, Helvetica, sans-serif;;
   color : ${colors.primary};
-  font-weight:4;
+  font-size: 20px;
+  font-weight: 400;
   margin: 0;
+  @media screen and (max-width: 520px) {
+    font-size: 12px;
 }
 `
-
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
 root.render(

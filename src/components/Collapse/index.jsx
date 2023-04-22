@@ -13,7 +13,6 @@ const StyleCollapse = styled.div`
   position: relative;
   margin-bottom: 15px;
 `
-
 const StyleCollapseBar = styled.div`
   background-color: ${color.primary};
   display: flex;
@@ -24,8 +23,21 @@ const StyleCollapseBar = styled.div`
   border-radius: 5px;
   position: relative;
   z-index: 1;
+  @media screen and (max-width: 520px) {
+    height: 35px;
+  }
 `
-
+const StyleCollapseH3 = styled.h3`
+  color: white;
+  padding-left: 15px;
+  font-size: 24px;
+  @media screen and (max-width: 520px) {
+    font-size: 15px;
+  }
+`
+const StyleCollapseArrow = styled.img`
+  padding-right: 10px;
+`
 const StyleCollapseContent = styled.div`
   background-color: #f6f6f6;
   width: 100%;
@@ -34,21 +46,10 @@ const StyleCollapseContent = styled.div`
   top: -10px;
   z_index: 0;
 `
-const StyleCollapseP = styled.ul`
+const StyleCollapseText = styled.div`
   padding: 30px;
-  font-size: 24px;
   text-align: left;
 `
-const StyleCollapseH3 = styled.h3`
-  color: white;
-  padding-left: 30px;
-  font-size: 24px;
-  font-weight: 5;
-`
-const StyleCollapseArrow = styled.img`
-  padding-right: 40px;
-`
-
 function Collapse({ title, content }) {
   const [arrow, setArrow] = useState(arrowUp)
   const [open, setOpen] = useState(false)
@@ -65,9 +66,8 @@ function Collapse({ title, content }) {
         <StyleCollapseArrow src={arrow} alt="flèche" width="24" height="14" />
       </StyleCollapseBar>
       <StyleCollapseContent>
+        <StyleCollapseText>{content}</StyleCollapseText>
         <br />
-        <StyleCollapseP>{content}</StyleCollapseP>
-        <br/>
       </StyleCollapseContent>
     </StyleCollapse>
   ) : (

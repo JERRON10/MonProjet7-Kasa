@@ -15,22 +15,30 @@ const Styled404 = styled.h2`
   font-weight: 700;
 `
 const StyledP = styled.p`
-  font-size: 3vh;
   font-weight: 500;
   text-align: center;
-  margin-top: 30px;
-`
-const StyledLink = styled(Link)`
-  margin-top: 200px;
-  font-size: 2vh;
-  text-decoration: none;
-  &:hover{
-    text-decoration: underline solid 1px;
-    text-decoration-skip-ink: none;
-    text-underline-offset: 1px;  
+  margin-top: 20px;
+  font-size: 35px;
+  @media screen and (max-width: 520px) {
+    font-size: 18px;
+    margin: 10px 30px 0;
   }
 `
+const StyledLink = styled(Link)`
+  margin-top: 160px;
+  text-decoration: none;
+  font-size: 18px;
+  &:hover {
+    text-decoration: underline solid 1px;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 1px;
+  }
+  @media screen and (max-width: 520px) {
+    font-size: 12px;
+    margin-top: 100px;
+  }
 
+`
 export default function Error() {
   return (
     <StyledContainer>

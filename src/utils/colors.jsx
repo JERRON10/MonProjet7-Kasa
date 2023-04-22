@@ -4,5 +4,4 @@ const colors = {
   backgroundWindow: '#F7F7F7',
   bacgroundStar: '#E3E3E3',
 }
-
 export default colors

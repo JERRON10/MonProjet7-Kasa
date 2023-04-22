@@ -1,6 +1,6 @@
 import React from 'react'
-import logoWhite from '../../assets/logo-white.png'
 import styled from 'styled-components'
+import logoWhite from '../../assets/logo-white.png'
 
 const StyleBackground = styled.footer`
   background-color: black;
@@ -12,16 +12,20 @@ const StyleBackground = styled.footer`
   justify-content: space-around;
   align-items: center;
 `
-
 const StyleCopyRight = styled.p`
   color: white;
+  @media screen and (max-width: 520px) {
+    font-size: 12px;
+  }
 `
-
 export default function Footer() {
   return (
     <StyleBackground>
       <img src={logoWhite} alt="logo" width="100" />
-      <StyleCopyRight>c 2020 Kasa. All rights reserved</StyleCopyRight>
+      <StyleCopyRight>
+        <i className="fa-regular fa-copyright" style={{ color: '#E3E3E3' }} /> 2020
+        Kasa. All rights reserved
+      </StyleCopyRight>
     </StyleBackground>
   )
 }

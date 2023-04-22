@@ -3,13 +3,14 @@ import data from '../../data/logements.json'
 import styled from 'styled-components'
 
 const StyledStar = styled.span`
-font-size: 22px;
-margin-left: 18px;
-background-color: brown;
+font-size: 25px;
+margin-left: 10px;
+@media screen and (max-width: 520px) {
+  margin-left:0;
+  margin-right: 6px;
+}
 `
 const StyledContainer = styled.div`
-background-color: black;
-margin-top: 30px;
 
 `
 

@@ -4,34 +4,15 @@ import Banner from '../../components/Banner/index'
 import Card from '../../components/Card/index'
 import imageHome from '../../assets/img-home.png'
 
-const StyleBoxCards = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  background-color: ${color.backgroundWindow};
-  border-radius: 20px;
-  margin: 30px auto;
-  width: 90%;
-`
-
-const StyleTitle = styled.h1`
-  color: white;
-  font-size: 50px;
-  position: relative;
-  z-index: 2;
-
-`
-
 const StyledBanner = styled.div`
   background: url(${imageHome});
   background-size: cover;
   background-position: center;
   position: relative;
   z-index: 0;
-  border: 0 black solid;
   border-radius: 20px;
   width: 90%;
-  height:250px;
+  height: 250px;
   margin: 50px auto;
   text-align: center;
   display: flex;
@@ -49,9 +30,41 @@ const StyledBanner = styled.div`
     height: 100%;
     opacity: 0.3;
   }
-`
+  @media screen and (max-width: 520px) {
+    margin: auto;
+    height: 120px;
+  }
 
-function Home() {
+`
+const StyleBoxCards = styled.div`
+  background-color: ${color.backgroundWindow};
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-radius: 20px;
+  padding-top: 30px;
+  margin: 30px auto;
+  width: 90%;
+  @media screen and (max-width: 520px) {
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 10px auto;
+  }
+`
+const StyleTitle = styled.h1`
+  color: white;
+  font-size: 50px;
+  position: relative;
+  z-index: 2;
+  @media screen and (max-width: 520px) {
+    text-align: left;
+    font-size: 25px;
+    margin: 25px;
+  }
+`
+export default function Home() {
   return (
     <div>
       <Banner>
@@ -65,5 +78,3 @@ function Home() {
     </div>
   )
 }
-
-export default Home

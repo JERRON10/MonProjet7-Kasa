@@ -1,17 +1,15 @@
 import React from 'react'
+import { useState } from 'react'
 import styled from 'styled-components'
 import data from '../../data/logements.json'
 import arrowLeft from '../../assets/arrow-left.png'
 import arrowRight from '../../assets/arrow-right.png'
-import { useState } from 'react'
 
 const StyleCaroussel = styled.div`
   position: relative;
   z-index: 0;
-  margin: 0 auto;
-  width: 90%;
-  height: 450px;
-  background-color: lightygrey;
+  width: 100%;
+  height: 100%;
 `
 const StyledImg = styled.img`
   position: relative;
@@ -19,12 +17,14 @@ const StyledImg = styled.img`
   object-fit: cover;
   border-radius: 25px;
   width: 100%;
-  height: 450px;
-  margin: 50px auto;
+  height: 400px;
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
+  @media screen and (max-width: 520px) {
+    height: 260px;
+  }
 `
 const StyleArrowLeft = styled.img`
   position: absolute;
@@ -32,6 +32,10 @@ const StyleArrowLeft = styled.img`
   top: 42%;
   left: 25px;
   cursor: pointer;
+  @media screen and (max-width: 520px) {
+    width: 15px;
+    height: 30px;
+  }
 `
 const StyleArrowRight = styled.img`
   position: absolute;
@@ -39,19 +43,24 @@ const StyleArrowRight = styled.img`
   top: 42%;
   right: 25px;
   cursor: pointer;
+  @media screen and (max-width: 520px) {
+    width: 15px;
+    height: 30px;
+  }
 `
-
 const StyleCounter = styled.p`
   position: absolute;
   z-index: 2;
   bottom: 20px;
-  right: 50%;
+  right: 48%;
   color: white;
   font-size: 20px;
   font-weight: 700;
+  @media screen and (max-width: 520px) {
+    display: none;
+  }
 `
-
-function Caroussel({ params }) {
+export default function Caroussel({ params }) {
   const findImg = data.find((element) => element.id === params)
   const totalPicture = findImg.pictures.length
   const [index, setIndex] = useState(0)
@@ -92,4 +101,3 @@ function Caroussel({ params }) {
     </div>
   )
 }
-export default Caroussel

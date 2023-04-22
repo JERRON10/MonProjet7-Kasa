@@ -4,32 +4,33 @@ import styled from 'styled-components'
 import colors from '../../utils/colors'
 
 const StyledContainer = styled.ul`
-background-color: blue;
-display: flex;
-flex-direction: row;
-justify-content: flex-start;
-padding: 0;
-
+  display: flex;
+  flex-direction: row;
+  flex-wrap : wrap;
+  gap: 10px;
+  justify-content: flex-start;
+  padding-left: 0;
 `
 const StyledTag = styled.li`
-background-color: ${colors.primary};
-color: white;
-padding: 5px 40px;
-margin-right: 10px;
-border-radius: 10px;
-text-align: center;
-list-style: none;
-
+  background-color: ${colors.primary};
+  color: white;
+  font-size: 14px;
+  padding: 5px 30px;
+  border-radius: 6px;
+  text-align: center;
+  list-style: none;
+  @media screen and (max-width: 520px) {
+    font-size: 10px;
+  }
 `
-
-function Tag ({ params }) {
+export default function Tag({ params }) {
   const findTag = data.find((element) => element.id === params)
   const tag = findTag.tags
   return (
     <StyledContainer>
-     {tag.map((element, index)=> <StyledTag key={index}>{element}</StyledTag> )}
+      {tag.map((element, index) => (
+        <StyledTag key={index}>{element}</StyledTag>
+      ))}
     </StyledContainer>
   )
 }
-
-export default Tag

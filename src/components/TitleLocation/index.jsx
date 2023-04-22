@@ -3,27 +3,18 @@ import data from '../../data/logements.json'
 import styled from 'styled-components'
 
 const StyledTitle = styled.h2`
-background-color: yellow;
-font-size: 36px;
-margin-top: 10px;
+  font-size: 36px;
+  font-weight: 500;
+  @media screen and (max-width: 520px) {
+    font-size: 18px;
+  }
 `
-const StyledSmallTitle = styled.h3`
-background-color: pink;
-margin: 10px auto;
-`
-
-
-
-function TitleLocation({ params }) {
+export default function TitleLocation({ params }) {
   const findTitle = data.find((element) => element.id === params)
   const title = findTitle.title
-  const location = findTitle.location
   return (
     <div>
       <StyledTitle>{title}</StyledTitle>
-      <StyledSmallTitle>{location}</StyledSmallTitle>
     </div>
   )
 }
-
-export default TitleLocation
