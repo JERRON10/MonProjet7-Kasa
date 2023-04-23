@@ -67,9 +67,9 @@ export default function About() {
         <StyledBanner />
       </Banner>
       <StyledContainerCollapse>
-        {info.map((element) => (
+        {info.map((element, index) => (
           <Collapse
-            key={element.toString()}
+            key={element + index}
             title={element.title}
             content={element.content}
           />
