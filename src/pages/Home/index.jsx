@@ -34,7 +34,6 @@ const StyledBanner = styled.div`
     margin: auto;
     height: 120px;
   }
-
 `
 const StyleBoxCards = styled.div`
   background-color: ${color.backgroundWindow};

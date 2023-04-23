@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import logo from '../../assets/logo.png'
 
-const HeaderLink = styled.header`
+const StyledContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -13,7 +13,6 @@ const HeaderLink = styled.header`
   @media screen and (max-width: 520px) {
     margin: 20px auto;
   }
-
   @media screen and (max-width: 360px) {
     flex-direction: column;
   }
@@ -43,14 +42,15 @@ const StyledLink = styled(Link)`
     margin-right: 15px;
   }
 `
+
 export default function Header() {
   return (
-    <HeaderLink>
+    <StyledContainer>
       <StyledLogo src={logo} alt="logo" width="200" />
       <nav>
         <StyledLink to="/">Accueil</StyledLink>
         <StyledLink to="/about">A Propos</StyledLink>
       </nav>
-    </HeaderLink>
+    </StyledContainer>
   )
 }

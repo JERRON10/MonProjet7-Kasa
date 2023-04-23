@@ -5,7 +5,7 @@ import data from '../../data/logements.json'
 import arrowLeft from '../../assets/arrow-left.png'
 import arrowRight from '../../assets/arrow-right.png'
 
-const StyleCaroussel = styled.div`
+const StyledCaroussel = styled.div`
   position: relative;
   z-index: 0;
   width: 100%;
@@ -26,7 +26,7 @@ const StyledImg = styled.img`
     height: 260px;
   }
 `
-const StyleArrowLeft = styled.img`
+const StyledArrowLeft = styled.img`
   position: absolute;
   z-index: 2;
   top: 42%;
@@ -37,7 +37,7 @@ const StyleArrowLeft = styled.img`
     height: 30px;
   }
 `
-const StyleArrowRight = styled.img`
+const StyledArrowRight = styled.img`
   position: absolute;
   z-index: 2;
   top: 42%;
@@ -48,7 +48,7 @@ const StyleArrowRight = styled.img`
     height: 30px;
   }
 `
-const StyleCounter = styled.p`
+const StyledCounter = styled.p`
   position: absolute;
   z-index: 2;
   bottom: 20px;
@@ -61,43 +61,51 @@ const StyleCounter = styled.p`
   }
 `
 export default function Caroussel({ params }) {
-  const findImg = data.find((element) => element.id === params)
-  const totalPicture = findImg.pictures.length
+  // j'utilise la méthode find pour récupérer l'id du bon logement.
+  const search = data.find((element) => element.id === params)
+
+  // j'utilise lenght pour avoir le total des images disponibles.
+  const totalPictures = search.pictures.length
+
   const [index, setIndex] = useState(0)
+
   const previousImg = () => {
     const firstImg = index === 0
-    const newIndex = firstImg ? totalPicture - 1 : index - 1
+    const newIndex = firstImg ? totalPictures - 1 : index - 1
     setIndex(newIndex)
   }
+
   const nextImg = () => {
-    const lastImg = index === totalPicture - 1
+    const lastImg = index === totalPictures - 1
     const newIndex = lastImg ? 0 : index + 1
     setIndex(newIndex)
   }
-  return totalPicture === 1 ? (
+
+  // Si il y a une image dans data ne pas retourner le compteur
+  return totalPictures === 1 ? (
     <div>
-      <StyleCaroussel>
-        <StyledImg src={findImg.pictures[index]} />
-      </StyleCaroussel>
+      <StyledCaroussel>
+        <StyledImg src={search.pictures[index]} />
+      </StyledCaroussel>
     </div>
   ) : (
     <div>
-      <StyleCaroussel>
-        <StyledImg src={findImg.pictures[index]} />
-        <StyleArrowLeft
+      <StyledCaroussel>
+        <StyledImg src={search.pictures[index]} />
+        <StyledArrowLeft
           onClick={previousImg}
           src={arrowLeft}
           alt="flèche gauche"
         />
-        <StyleArrowRight
+        <StyledArrowRight
           onClick={nextImg}
           src={arrowRight}
           alt="flèche droite"
         />
-        <StyleCounter>
-          {index + 1} / {totalPicture}
-        </StyleCounter>
-      </StyleCaroussel>
+        <StyledCounter>
+          {index + 1} / {totalPictures}
+        </StyledCounter>
+      </StyledCaroussel>
     </div>
   )
 }

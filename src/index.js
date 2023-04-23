@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/Header/index'
 import Footer from './components/Footer/index'
+import { createGlobalStyle } from 'styled-components'
+import colors from './utils/colors'
 import Home from './pages/Home/index'
 import About from './pages/About/index'
 import Renting from './pages/Renting/index'
 import Error from './pages/Error/index'
-import { createGlobalStyle } from 'styled-components'
-import colors from './utils/colors'
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
   font-size: 20px;
   font-weight: 400;
   margin: 0;
+  max_width : 1500px;
   @media screen and (max-width: 520px) {
     font-size: 12px;
 }

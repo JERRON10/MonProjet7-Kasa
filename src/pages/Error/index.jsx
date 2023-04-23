@@ -37,7 +37,6 @@ const StyledLink = styled(Link)`
     font-size: 12px;
     margin-top: 100px;
   }
-
 `
 export default function Error() {
   return (

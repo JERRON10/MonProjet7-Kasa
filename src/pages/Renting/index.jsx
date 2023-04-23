@@ -67,11 +67,10 @@ const StyledCollapse = styled.div`
 
 export default function Renting() {
   const rentingNumber = useParams()
-  const findDescription = data.find(
-    (element) => element.id === rentingNumber.id
-  )
-  const findEquipments = data.find((element) => element.id === rentingNumber.id)
-  if (findDescription === undefined) return <Error />
+
+  const search = data.find((element) => element.id === rentingNumber.id)
+  // si id n'est pas trouver retourne la page d'erreur
+  if (search === undefined) return <Error />
 
   return (
     <div>
@@ -93,12 +92,12 @@ export default function Renting() {
 
       <StyledContainerCollapse>
         <StyledCollapse>
-          <Collapse title="Description" content={findDescription.description} />
+          <Collapse title="Description" content={search.description} />
         </StyledCollapse>
         <StyledCollapse>
           <Collapse
             title="Equipement"
-            content={findEquipments.equipments.map((element, index) => (
+            content={search.equipments.map((element, index) => (
               <p key={index}>{element}</p>
             ))}
           />

@@ -10,8 +10,8 @@ const StyledTitle = styled.h2`
   }
 `
 export default function TitleLocation({ params }) {
-  const findTitle = data.find((element) => element.id === params)
-  const title = findTitle.title
+  const search = data.find((element) => element.id === params)
+  const title = search.title
   return (
     <div>
       <StyledTitle>{title}</StyledTitle>

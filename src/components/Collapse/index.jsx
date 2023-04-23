@@ -4,7 +4,7 @@ import arrowUp from '../../assets/vector-up.png'
 import arrowDown from '../../assets/vector-down.png'
 import color from '../../utils/colors'
 
-const StyleCollapse = styled.div`
+const StyledCollapse = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -13,7 +13,7 @@ const StyleCollapse = styled.div`
   position: relative;
   margin-bottom: 15px;
 `
-const StyleCollapseBar = styled.div`
+const StyledCollapseBar = styled.div`
   background-color: ${color.primary};
   display: flex;
   justify-content: space-between;
@@ -27,7 +27,7 @@ const StyleCollapseBar = styled.div`
     height: 35px;
   }
 `
-const StyleCollapseH3 = styled.h3`
+const StyledCollapseTitle = styled.h3`
   color: white;
   padding-left: 15px;
   font-size: 24px;
@@ -35,10 +35,10 @@ const StyleCollapseH3 = styled.h3`
     font-size: 15px;
   }
 `
-const StyleCollapseArrow = styled.img`
+const StyledCollapseArrow = styled.img`
   padding-right: 10px;
 `
-const StyleCollapseContent = styled.div`
+const StyledCollapseContent = styled.div`
   background-color: #f6f6f6;
   width: 100%;
   border-radius: 10px;
@@ -46,43 +46,43 @@ const StyleCollapseContent = styled.div`
   top: -10px;
   z_index: 0;
 `
-const StyleCollapseText = styled.div`
+const StyledCollapseText = styled.div`
   padding: 30px;
   text-align: left;
 `
-function Collapse({ title, content }) {
+
+export default function Collapse({ title, content }) {
   const [arrow, setArrow] = useState(arrowUp)
   const [open, setOpen] = useState(false)
 
+  // si open est false afficher uniquement la barre sinon barre + contenu
   return open ? (
-    <StyleCollapse>
-      <StyleCollapseBar
+    <StyledCollapse>
+      <StyledCollapseBar
         onClick={() => {
           setArrow(arrow === arrowDown ? arrowUp : arrowDown)
           setOpen(false)
         }}
       >
-        <StyleCollapseH3>{title}</StyleCollapseH3>
-        <StyleCollapseArrow src={arrow} alt="flèche" width="24" height="14" />
-      </StyleCollapseBar>
-      <StyleCollapseContent>
-        <StyleCollapseText>{content}</StyleCollapseText>
+        <StyledCollapseTitle>{title}</StyledCollapseTitle>
+        <StyledCollapseArrow src={arrow} alt="flèche" width="24" height="14" />
+      </StyledCollapseBar>
+      <StyledCollapseContent>
+        <StyledCollapseText>{content}</StyledCollapseText>
         <br />
-      </StyleCollapseContent>
-    </StyleCollapse>
+      </StyledCollapseContent>
+    </StyledCollapse>
   ) : (
-    <StyleCollapse>
-      <StyleCollapseBar
+    <StyledCollapse>
+      <StyledCollapseBar
         onClick={() => {
           setArrow(arrow === arrowDown ? arrowUp : arrowDown)
           setOpen(true)
         }}
       >
-        <StyleCollapseH3>{title}</StyleCollapseH3>
-        <StyleCollapseArrow src={arrow} alt="flèche" width="24" height="14" />
-      </StyleCollapseBar>
-    </StyleCollapse>
+        <StyledCollapseTitle>{title}</StyledCollapseTitle>
+        <StyledCollapseArrow src={arrow} alt="flèche" width="24" height="14" />
+      </StyledCollapseBar>
+    </StyledCollapse>
   )
 }
-
-export default Collapse

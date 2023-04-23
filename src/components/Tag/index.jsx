@@ -6,7 +6,7 @@ import colors from '../../utils/colors'
 const StyledContainer = styled.ul`
   display: flex;
   flex-direction: row;
-  flex-wrap : wrap;
+  flex-wrap: wrap;
   gap: 10px;
   justify-content: flex-start;
   padding-left: 0;
@@ -24,8 +24,8 @@ const StyledTag = styled.li`
   }
 `
 export default function Tag({ params }) {
-  const findTag = data.find((element) => element.id === params)
-  const tag = findTag.tags
+  const search = data.find((element) => element.id === params)
+  const tag = search.tags
   return (
     <StyledContainer>
       {tag.map((element, index) => (

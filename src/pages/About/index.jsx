@@ -12,7 +12,7 @@ const StyledBanner = styled.div`
   border-radius: 20px;
   width: 90%;
   height: 250px;
-  margin: 50px auto;
+  margin: 25px auto;
   &::before {
     content: '';
     background-color: black;

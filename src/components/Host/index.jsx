@@ -18,15 +18,15 @@ const StyledImg = styled.img`
   width: 60px;
 `
 const StyledP = styled.p`
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
   width: 60%;
   text-align: right;
 `
 
 export default function Host({ params }) {
-  const findHost = data.find((element) => element.id === params)
-  const host = findHost.host
+  const search = data.find((element) => element.id === params)
+  const host = search.host
   return (
     <StyledContainer>
       <StyledP>{host.name}</StyledP>
