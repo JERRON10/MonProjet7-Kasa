@@ -17,8 +17,9 @@ const StyledCard = styled.article`
   text-align: center;
   position: relative;
   z-index: 0;
+  transition: all 200ms cubic-bezier(0,.4,.45,1.92);
   &:hover {
-    box-shadow: 0 0 15px grey;
+    transform: scale(1.03);
   }
   &::after {
     content: '';
@@ -52,7 +53,7 @@ const StyledTitle = styled.h2`
   margin-top: 10px;
   color: ${colors.secondary};
   @media screen and (max-width: 520px) {
-    font-size: 14px;
+    font-size: 15px;
   }
 `
 

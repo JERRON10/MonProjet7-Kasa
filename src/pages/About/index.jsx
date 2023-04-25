@@ -11,7 +11,7 @@ const StyledBanner = styled.div`
   z-index: 0;
   border-radius: 20px;
   width: 90%;
-  height: 250px;
+  height: 225px;
   margin: 25px auto;
   &::before {
     content: '';
