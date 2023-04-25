@@ -12,7 +12,7 @@ const StyledBanner = styled.div`
   z-index: 0;
   border-radius: 20px;
   width: 90%;
-  height: 250px;
+  height: 225px;
   margin: 50px auto;
   text-align: center;
   display: flex;
@@ -54,7 +54,7 @@ const StyleBoxCards = styled.div`
 `
 const StyleTitle = styled.h1`
   color: white;
-  font-size: 50px;
+  font-size: 45px;
   position: relative;
   z-index: 2;
   @media screen and (max-width: 520px) {
