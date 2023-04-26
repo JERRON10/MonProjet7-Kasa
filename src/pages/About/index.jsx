@@ -38,6 +38,7 @@ const StyledContainerCollapse = styled.div`
   }
 `
 export default function About() {
+  // Ces données sont récupérées dans la maquette
   const info = [
     {
       title: 'Fiabilité',

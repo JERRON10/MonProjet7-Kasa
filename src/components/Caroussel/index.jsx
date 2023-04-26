@@ -60,21 +60,27 @@ const StyledCounter = styled.p`
     display: none;
   }
 `
+
+// Je récupére la props params qui représente l'id de Url (donc id du logement)
 export default function Caroussel({ params }) {
-  // j'utilise la méthode find pour récupérer l'id du bon logement.
+  // J'utilise la méthode find pour récupérer l'id du bon logement.
   const search = data.find((element) => element.id === params)
 
   // j'utilise lenght pour avoir le total des images disponibles.
   const totalPictures = search.pictures.length
 
+  // Index est la valeur actuelle. SetIndex est la fonction qui permet de la modifier et useState est la valeur initiale (ici 0)
   const [index, setIndex] = useState(0)
 
+  // la fonction permet de changer d'image en fonction de son index. 
+  // Si l'index est de 0 retourner au dernier index sinon retourné à l'index précédent.
   const previousImg = () => {
     const firstImg = index === 0
     const newIndex = firstImg ? totalPictures - 1 : index - 1
     setIndex(newIndex)
   }
 
+    // Si c'est le dernier index retourner au premier index sinon retourner à l'index suivant.
   const nextImg = () => {
     const lastImg = index === totalPictures - 1
     const newIndex = lastImg ? 0 : index + 1
@@ -88,11 +94,13 @@ export default function Caroussel({ params }) {
         <StyledImg src={search.pictures[index]} />
       </StyledCaroussel>
     </div>
+    // sinon il retourne le compteur
   ) : (
     <div>
       <StyledCaroussel>
         <StyledImg src={search.pictures[index]} />
         <StyledArrowLeft
+        // Onclick permet d'appeler la fonction previousImg
           onClick={previousImg}
           src={arrowLeft}
           alt="flèche gauche"

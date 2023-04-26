@@ -23,6 +23,7 @@ const StyledTag = styled.li`
     font-size: 10px;
   }
 `
+// Je récupére la props params qui représente l'id de Url (donc id du logement)
 export default function Tag({ params }) {
   const search = data.find((element) => element.id === params)
   const tag = search.tags

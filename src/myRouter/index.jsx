@@ -9,6 +9,7 @@ import About from '../pages/About/index'
 import Renting from '../pages/Renting/index'
 import Error from '../pages/Error/index'
 
+// GlobalStyle permet d'avoir un style par défaut
 const GlobalStyle = createGlobalStyle`
 * {
   font-family: montserrat, Helvetica, sans-serif;;

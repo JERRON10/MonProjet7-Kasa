@@ -17,8 +17,10 @@ const StyledCard = styled.article`
   text-align: center;
   position: relative;
   z-index: 0;
-  transition: all 200ms cubic-bezier(0,.4,.45,1.92);
+  transition: transform 300ms cubic-bezier(0,.4,.45,1.92);
+  opacity: 0.90;
   &:hover {
+    opacity: 1;
     transform: scale(1.03);
   }
   &::after {
@@ -42,10 +44,6 @@ const StyledImg = styled.img`
   height: 75%;
   object-fit: cover;
   border-radius: 10px 10px 0 0;
-  opacity: 0.8;
-  &:hover {
-    opacity: 1;
-  }
 `
 const StyledTitle = styled.h2`
   text-decoration: none;
@@ -60,6 +58,7 @@ const StyledTitle = styled.h2`
 export default function Card() {
   return (
     <Fragment>
+      {/* Je recupére les données (id, cover, title) en utilisant la fonction map sur les logements. */}
       {logements.map((element) => (
         <StyledLink to={`/renting/${element.id}`} key={element.id}>
           <StyledCard>

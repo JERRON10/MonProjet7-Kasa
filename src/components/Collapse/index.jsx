@@ -50,16 +50,17 @@ const StyledCollapseText = styled.div`
   padding: 30px;
   text-align: left;
 `
-
+// Je récupére les props title et content pour compléter les collapses.
 export default function Collapse({ title, content }) {
   const [arrow, setArrow] = useState(arrowUp)
   const [open, setOpen] = useState(false)
 
-  // si open est false afficher uniquement la barre sinon barre + contenu
+  // Si open est false afficher uniquement la barre sinon barre + contenu.
   return open ? (
     <StyledCollapse>
       <StyledCollapseBar
         onClick={() => {
+          // Au click sur la collapse, je change le sens de la flèche et la collapse est en position par défaut (fermé)
           setArrow(arrow === arrowDown ? arrowUp : arrowDown)
           setOpen(false)
         }}
@@ -75,6 +76,7 @@ export default function Collapse({ title, content }) {
   ) : (
     <StyledCollapse>
       <StyledCollapseBar
+        // Au click sur la collapse, je change le sens de la flèche et la collapse est ouverte
         onClick={() => {
           setArrow(arrow === arrowDown ? arrowUp : arrowDown)
           setOpen(true)

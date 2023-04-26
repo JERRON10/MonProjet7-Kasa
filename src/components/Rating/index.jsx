@@ -11,6 +11,7 @@ const StyledStar = styled.span`
   }
 `
 
+// Je récupére la props params qui représente l'id de Url (donc id du logement)
 export default function Rating({ params }) {
   const search = data.find((element) => element.id === params)
   const rating = search.rating
@@ -23,6 +24,7 @@ export default function Rating({ params }) {
   return (
     <div>
       {range.map((element) =>
+      // Si la note est inférieur au rang afficher une étoile grise sinon une étoile rouge
         rating < element ? (
           <StyledStar key={element.toString()}>{greyStar}</StyledStar>
         ) : (

@@ -66,10 +66,11 @@ const StyledCollapse = styled.div`
 `
 
 export default function Renting() {
+  // J'utilise usePararms pour extraire id de l'URL.
   const rentingNumber = useParams()
 
   const search = data.find((element) => element.id === rentingNumber.id)
-  // si id n'est pas trouver retourne la page d'erreur
+  // Si id n'existe pas retourner à la page d'erreur.
   if (search === undefined) return <Error />
 
   return (

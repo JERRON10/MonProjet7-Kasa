@@ -9,6 +9,7 @@ const StyledTitle = styled.h2`
     font-size: 18px;
   }
 `
+// Je récupére la props params qui représente l'id de Url (donc id du logement)
 export default function TitleLocation({ params }) {
   const search = data.find((element) => element.id === params)
   const title = search.title
