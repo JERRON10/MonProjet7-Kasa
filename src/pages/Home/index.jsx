@@ -35,6 +35,9 @@ const StyledBanner = styled.div`
     height: 120px;
   }
 `
+
+// modif => supprimer align-items en 520px;
+
 const StyleBoxCards = styled.div`
   background-color: ${color.backgroundWindow};
   display: flex;
@@ -47,7 +50,6 @@ const StyleBoxCards = styled.div`
   @media screen and (max-width: 520px) {
     background-color: white;
     flex-direction: column;
-    align-items: center;
     padding: 0;
     margin: 10px auto;
   }

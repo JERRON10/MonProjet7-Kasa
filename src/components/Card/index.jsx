@@ -36,6 +36,7 @@ const StyledCard = styled.article`
   }
   @media screen and (max-width: 520px) {
     margin: 10px auto 5px;
+    width: 100%;
     height: 250px;
   }
 `
